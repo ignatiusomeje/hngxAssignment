@@ -18,7 +18,7 @@ App.get("/api", (req, res, next) => {
       current_day: day[new Date().getUTCDay()],
       utc_time: new Date().toISOString().split('.')[0].concat('Z'),
       track,
-      github_file_url: "https://github.com/ignatiusomeje/hngxAssignment/blob/main/app.js",
+      github_file_url: "https://github.com/ignatiusomeje/hngxAssignment/blob/main/server.js",
       github_repo_url: "https://github.com/ignatiusomeje/hngxAssignment",
       status_code: 200,
     });
