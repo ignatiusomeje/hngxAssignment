@@ -4,19 +4,19 @@ const App = express();
 App.get("/api", (req, res, next) => {
   try {
     const day = [
+      "Sunday",
       "Monday",
       "Tuesday",
       "Wednesday",
       "Thursday",
       "Friday",
-      "Saturday",
-      "Sunday",
+      "Saturday"
     ];
     const { slack_name, track } = req.query;
     return res.json({
       slack_name,
       current_day: day[new Date().getUTCDay()],
-      utc_time: new Date().toISOString(),
+      utc_time: new Date().toISOString().split('.')[0].concat('Z'),
       track,
       github_file_url: "https://github.com/ignatiusomeje/hngxAssignment/blob/main/app.js",
       github_repo_url: "https://github.com/ignatiusomeje/hngxAssignment",
